@@ -1,11 +1,20 @@
 package com.codedifferently.assessment01.part02;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class PetOwner {
+
+    private String name;
+    private Pet[] pets;
+
     /**
      * @param name name of the owner of the Pet
      * @param pets array of Pet object
      */
     public PetOwner(String name, Pet... pets) {
+        this.name = name;
+        this.pets = pets;
     }
 
     /**
