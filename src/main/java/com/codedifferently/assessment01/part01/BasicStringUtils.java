@@ -10,7 +10,14 @@ public class BasicStringUtils {
      * @param str
      * @return
      */
-    public static String camelCase(String str){return null;}
+    public static String camelCase(String str){
+        String[] noWhiteSpaceStr = str.split("\\s");
+        StringBuilder builder = new StringBuilder();
+        for(String word : noWhiteSpaceStr){
+            builder.append(word.substring(0, 1).toUpperCase() + word.substring(1));
+        }
+        return builder.toString();
+    }
 
     /**
      * Reverse the string
@@ -19,7 +26,10 @@ public class BasicStringUtils {
      * @param str
      * @return
      */
-    public static String reverse(String str){return null;}
+    public static String reverse(String str){
+        StringBuilder builder = new StringBuilder(str);
+        return builder.reverse().toString();
+    }
 
     /**
      * Camel case the first letter of every word, then reverse the string and remove all spaces
@@ -28,7 +38,12 @@ public class BasicStringUtils {
      * @param str
      * @return
      */
-    public static String reverseThenCamelCase(String str){ return null; }
+    public static String reverseThenCamelCase(String str){
+        return camelCase(reverse(str));
+    }
 
-    public static String removeFirstAndLastCharacter(String str){ return null; }
+    public static String removeFirstAndLastCharacter(String str){
+        if(str.length() < 3) return "";
+        return str.substring(1, str.length()-1);
+    }
 }
